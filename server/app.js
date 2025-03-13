@@ -5,11 +5,10 @@ import pkg from "dotenv";
 import { mainsend } from "./chunk.js";
 import { mainretrieve } from "./retrieve.js";
 import { buffer } from "stream/consumers";
-import 'dotenv/config';
-
+import "dotenv/config";
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 1234;
 
 app.use(cors());
 app.use(express.json());
@@ -18,7 +17,7 @@ const upload = multer();
 app.post("/api/upload", upload.single("file"), async (req, res) => {
   try {
     if (!req.file) {
-      return res.status(400).json({ error: "No file uploaded"});
+      return res.status(400).json({ error: "No file uploaded" });
     }
 
     const botToken = req.body.botToken;
