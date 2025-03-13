@@ -75,7 +75,7 @@ const FileCard = ({ file, botToken, channelId, onDelete, downloadProgress = 0 }:
         } catch (error) {
             console.error('Error downloading file:', error);
         } finally {
-            setIsDownloading(false); 
+            setIsDownloading(false);
         }
     };
 
@@ -86,7 +86,11 @@ const FileCard = ({ file, botToken, channelId, onDelete, downloadProgress = 0 }:
                     <FileText size={24} />
                 </div>
                 <div>
-                    <p className="font-medium text-gray-800 dark:text-white">{file.fileName}</p>
+                    <p className="font-medium text-gray-800 dark:text-white">
+                        {file.fileName.length > 30
+                            ? file.fileName.substring(0, 30) + '...'
+                            : file.fileName}
+                    </p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                         {(file.fileSize / (1024 * 1024)).toFixed(2)} MB
                     </p>
@@ -110,13 +114,12 @@ const FileCard = ({ file, botToken, channelId, onDelete, downloadProgress = 0 }:
                         <Button
                             variant="outline"
                             size="sm"
-                            className={`relative overflow-hidden group ${
-                                downloadComplete 
-                                    ? "bg-green-50 text-green-600 border-green-200" 
-                                    : isDownloading 
-                                        ? "bg-purple-50 text-purple-600 border-purple-200" 
+                            className={`relative overflow-hidden group ${downloadComplete
+                                    ? "bg-green-50 text-green-600 border-green-200"
+                                    : isDownloading
+                                        ? "bg-purple-50 text-purple-600 border-purple-200"
                                         : "text-purple-600 hover:text-purple-700 hover:bg-purple-50 dark:hover:bg-purple-900/20"
-                            } px-4 py-2 transition-all duration-300`}
+                                } px-4 py-2 transition-all duration-300`}
                             onClick={handleDownload}
                             disabled={isDownloading || downloadComplete}
                         >
@@ -145,12 +148,12 @@ const FileCard = ({ file, botToken, channelId, onDelete, downloadProgress = 0 }:
                                     </span>
                                 </div>
                             )}
-                            
+
                             {/* Background pulse effect when downloading */}
                             {isDownloading && (
                                 <span className="absolute inset-0 bg-purple-200 opacity-30 animate-pulse"></span>
                             )}
-                            
+
                             {/* Success ripple effect */}
                             {downloadComplete && (
                                 <span className="absolute inset-0 bg-green-200 animate-ping opacity-30 duration-700"></span>
