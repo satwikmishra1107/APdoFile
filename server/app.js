@@ -19,10 +19,12 @@ app.use(cors());
 app.use(express.json());
 const upload = multer();
 
-app.use(cors({
-  origin: 'http://3.7.162.84',
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: "*", 
+    credentials: true,
+  })
+);
 
 app.post("/api/upload", upload.single("file"), async (req, res) => {
   try {
@@ -72,6 +74,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "build", "index.html"));
 });
 
-app.listen(PORT, "3.7.162.84", () => {
-  console.log(`Server is running on http://3.7.162.84:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
