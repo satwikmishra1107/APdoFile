@@ -44,7 +44,7 @@ async function retrieveAndReassembleFile(channel, targetFileHash, fileSize) {
             // console.log(attachment.content)
             const chunkData = await downloadAttachment(attachment.url);
             file = Buffer.concat([chunkData, file]);
-            console.log(file.byteLength);
+            // console.log(file.byteLength);
             // console.log(file.byteLength,attachment.url)
             if (file.byteLength >= fileSize) break;
           }

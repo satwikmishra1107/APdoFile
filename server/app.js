@@ -59,7 +59,7 @@ app.get("/api/retrieve/:fileHash", async (req, res) => {
 
     const file = await mainretrieve(channelId, fileHash, botToken, fileSize);
 
-    console.log(fileName);
+    // console.log(fileName);
 
     res.status(200).send(file);
   } catch (error) {

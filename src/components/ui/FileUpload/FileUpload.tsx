@@ -220,7 +220,7 @@ export default function FileUploadPage() {
 
         try {
 
-            console.log(botToken);
+            // console.log(botToken);
             const formData = new FormData();
             formData.append('file', selectedFile!);
             formData.append('filename', selectedFile!.name);
