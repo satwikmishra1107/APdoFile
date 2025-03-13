@@ -7,17 +7,17 @@ import { useAuth } from '../../context/userAuthContext';
 export default function OTPVerification() {
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState<string | null>(null);
-    const [loginMessage, setLoginMessage] = useState<string | null>("After verifying your email, please login with your registered email address.");
-    const [theme, setTheme] = useState<'light' | 'dark'>('light');
+    const [loginMessage] = useState<string | null>("After verifying your email, please login with your registered email address.");
+    // const [setTheme] = useState<'light' | 'dark'>('light');
     const [countdown, setCountdown] = useState(30);
     const navigate = useNavigate();
-    const { verifyEmail, resendEmail } = useAuth();
+    const { resendEmail } = useAuth();
 
-    useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' || 'light';
-        setTheme(savedTheme);
-        document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-    }, []);
+    // useEffect(() => {
+    //     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' || 'light';
+    //     setTheme(savedTheme);
+    //     document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    // }, []);
 
     useEffect(() => {
         if (countdown > 0) {

@@ -19,7 +19,7 @@ export default function LoginPage() {
     const [isFlipped, setIsFlipped] = useState(false);
     const [signupEmail, setSignupEmail] = useState("");
     const [signupPassword, setSignupPassword] = useState("");
-    const { loginWithEmail, loginWithGoogle, signupWithEmail, PasswordResetEmail, user } = useAuth();
+    const { loginWithEmail, loginWithGoogle, signupWithEmail, PasswordResetEmail} = useAuth();
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [successMessage, setSuccessMessage] = useState<string | null>(null);

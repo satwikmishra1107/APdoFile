@@ -9,7 +9,6 @@ import {
   orderBy,
   where,
   deleteDoc,
-  Firestore,
   getFirestore,
 } from "firebase/firestore";
 

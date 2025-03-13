@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { FileText, X, CheckCircle, Loader2, Download, ArrowDown } from "lucide-react";
-import { useAuth } from '@/context/userAuthContext';
+import { FileText, X, CheckCircle, Loader2, ArrowDown } from "lucide-react";
 
 interface FileCardProps {
     file: {

@@ -1,13 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { UploadCloud, FileText, X, CheckCircle, Loader2, AlertCircle, LogOut, Hash, ChevronDown, Check, Copy, Bot } from "lucide-react";
+import { UploadCloud, FileText, Loader2, AlertCircle, LogOut, Hash, ChevronDown, Bot } from "lucide-react";
 import FileCard from "./FileCard";
 import { useAuth } from '../../../context/userAuthContext';
 import { saveFileMetadata, fetchUserFiles, deleteFileMetadata } from "@/firebaseUtils";
 import { Alert, AlertDescription } from "../alert";
-import { auth } from "@/firebaseConfig";
 import { createPortal } from 'react-dom';
 import { BOT_TOKEN1, CHANNEL_ID1, PORT } from "../../../config";
 
@@ -73,7 +71,6 @@ export default function FileUploadPage() {
 
     const [showBotDropdown, setShowBotDropdown] = useState(false);
     const [showChannelDropdown, setShowChannelDropdown] = useState(false);
-    const [tokenCopied, setTokenCopied] = useState(false);
     const [selectedBotIndex, setSelectedBotIndex] = useState<number | null>(null);
     const [selectedChannelIndex, setSelectedChannelIndex] = useState<number | null>(null);
 
@@ -178,14 +175,6 @@ export default function FileUploadPage() {
         setTheme(newTheme);
         localStorage.setItem('theme', newTheme);
         document.documentElement.classList.toggle('dark');
-    };
-
-    //Temporary copy token function
-
-    const copyToken = (token: string) => {
-        navigator.clipboard.writeText(token);
-        setTokenCopied(true);
-        setTimeout(() => setTokenCopied(false), 2000);
     };
 
     //File Selection 
@@ -332,14 +321,14 @@ export default function FileUploadPage() {
         </div>
     );
 
-    const getFileColor = (type = "default") => {
-        switch (type) {
-            case "document": return "bg-blue-50 text-blue-600";
-            case "image": return "bg-green-50 text-green-600";
-            case "data": return "bg-purple-50 text-purple-600";
-            default: return "bg-gray-50 text-gray-600";
-        }
-    };
+    // const getFileColor = (type = "default") => {
+    //     switch (type) {
+    //         case "document": return "bg-blue-50 text-blue-600";
+    //         case "image": return "bg-green-50 text-green-600";
+    //         case "data": return "bg-purple-50 text-purple-600";
+    //         default: return "bg-gray-50 text-gray-600";
+    //     }
+    // };
 
     const handleDeleteFile = async (fileHash: string) => {
         if (!user?.uid) {
