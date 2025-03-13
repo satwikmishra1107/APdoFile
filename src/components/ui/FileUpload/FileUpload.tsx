@@ -9,7 +9,7 @@ import { Alert, AlertDescription } from "../alert";
 import { createPortal } from 'react-dom';
 import { BOT_TOKEN1, CHANNEL_ID1, PORT } from "../../../config";
 
-const BASE_URL = `http://localhost:${PORT}`;
+const BASE_URL = `http://0.0.0.0:${PORT}`;
 
 interface FileMetadata {
     fileName: string;
