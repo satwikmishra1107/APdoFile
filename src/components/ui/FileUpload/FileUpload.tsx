@@ -9,7 +9,7 @@ import { Alert, AlertDescription } from "../alert";
 import { createPortal } from 'react-dom';
 import { BOT_TOKEN1, CHANNEL_ID1, PORT } from "../../../config";
 
-const BASE_URL = `http://0.0.0.0:${PORT}`;
+const BASE_URL = `http://3.7.162.84:${PORT}`;
 
 interface FileMetadata {
     fileName: string;
@@ -55,7 +55,7 @@ export default function FileUploadPage() {
     const handleLogout = async () => {
         try {
             await logout();
-            // Navigation is handled in AuthContext
+
         } catch (error) {
             console.error('Logout failed:', error);
         }

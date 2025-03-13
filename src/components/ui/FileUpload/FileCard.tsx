@@ -17,7 +17,7 @@ interface FileCardProps {
     downloadProgress: number;
 }
 
-const BASE_URL = `http://0.0.0.0:${PORT}`;
+const BASE_URL = `http://3.7.162.84:${PORT}`;
 
 const FileCard = ({ file, botToken, channelId, onDelete, downloadProgress = 0 }: FileCardProps) => {
 
