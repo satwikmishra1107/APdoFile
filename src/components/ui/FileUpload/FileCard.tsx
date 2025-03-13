@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { FileText, X, CheckCircle, Loader2, ArrowDown } from "lucide-react";
+import { PORT } from "../../../config";
 
 interface FileCardProps {
     file: {
@@ -15,6 +16,8 @@ interface FileCardProps {
     onDelete?: (fileHash: string) => void;
     downloadProgress: number;
 }
+
+const BASE_URL = `http://localhost:${PORT}`;
 
 const FileCard = ({ file, botToken, channelId, onDelete, downloadProgress = 0 }: FileCardProps) => {
 
@@ -43,7 +46,7 @@ const FileCard = ({ file, botToken, channelId, onDelete, downloadProgress = 0 }:
             });
 
             const response = await fetch(
-                `http://localhost:5000/api/retrieve/${file.fileHash}?${params}`,
+                `${BASE_URL}/api/retrieve/${file.fileHash}?${params}`,
                 {
                     method: 'GET',
                     headers: {
