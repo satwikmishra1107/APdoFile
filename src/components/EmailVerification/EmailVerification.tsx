@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle, CheckCircle, ArrowLeft } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/userAuthContext';
+import Logo from '../../assets/Something-removebg-preview.png';
 
 export default function OTPVerification() {
     const [error, setError] = useState<string | null>(null);
@@ -76,7 +77,7 @@ export default function OTPVerification() {
                                 </svg> */}
 
                                 <img
-                                    src="public\Something-removebg-preview.png"
+                                    src={Logo}
                                     alt="Profile"
                                     className="w-full h-full object-cover"
                                 />

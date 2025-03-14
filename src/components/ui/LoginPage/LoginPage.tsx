@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle, CheckCircle } from "lucide-react";
 import { useAuth } from '../../../context/userAuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
+import Logo from '../../../assets/Something-removebg-preview.png';
 
 export default function LoginPage() {
     const location = useLocation();
@@ -236,7 +237,7 @@ export default function LoginPage() {
                                     </svg> */}
 
                                     <img
-                                        src="public\Something-removebg-preview.png"
+                                        src={Logo}
                                         alt="Profile"
                                         className="w-full h-full object-cover"
                                     />
@@ -411,7 +412,7 @@ export default function LoginPage() {
                                     </svg> */}
 
                                     <img
-                                        src="public\Something-removebg-preview.png"
+                                        src={Logo}
                                         alt="Profile"
                                         className="w-full h-full object-cover"
                                     />
