@@ -64,7 +64,7 @@ export default function OTPVerification() {
 
                         <div className="text-center mb-8">
                             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center">
-                                <svg
+                                {/* <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -73,7 +73,13 @@ export default function OTPVerification() {
                                     className="w-8 h-8 text-white"
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.5 7.5 0 004.5 10.5m0 0a7.5 7.5 0 01-1.568 8.268M4.5 10.5L19.5 10.5" />
-                                </svg>
+                                </svg> */}
+
+                                <img
+                                    src="public\Something-removebg-preview.png"
+                                    alt="Profile"
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
                             <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent">
                                 Verify Your Email

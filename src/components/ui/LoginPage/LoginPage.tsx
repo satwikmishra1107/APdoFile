@@ -19,7 +19,7 @@ export default function LoginPage() {
     const [isFlipped, setIsFlipped] = useState(false);
     const [signupEmail, setSignupEmail] = useState("");
     const [signupPassword, setSignupPassword] = useState("");
-    const { loginWithEmail, loginWithGoogle, signupWithEmail, PasswordResetEmail} = useAuth();
+    const { loginWithEmail, loginWithGoogle, signupWithEmail, PasswordResetEmail } = useAuth();
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -78,7 +78,7 @@ export default function LoginPage() {
         e.preventDefault();
         setError(null);
         setIsLoading(true);
-    
+
         try {
 
             if (!signupEmail) {
@@ -87,9 +87,9 @@ export default function LoginPage() {
             if (!signupPassword || signupPassword.length < 6) {
                 throw new Error("Password must be at least 6 characters");
             }
-    
+
             await signupWithEmail(signupEmail, signupPassword);
-    
+
             setSuccessMessage("Verification email sent! Please check your inbox and click the link to complete signup.");
         } catch (err: any) {
             setError('Failed to sign up: ' + err.message);
@@ -224,7 +224,7 @@ export default function LoginPage() {
                         <CardContent className="pt-8 pb-6 px-8">
                             <div className="text-center mb-8">
                                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center">
-                                    <svg
+                                    {/* <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
                                         viewBox="0 0 24 24"
@@ -233,7 +233,13 @@ export default function LoginPage() {
                                         className="w-8 h-8 text-white"
                                     >
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                                    </svg>
+                                    </svg> */}
+
+                                    <img
+                                        src="public\Something-removebg-preview.png"
+                                        alt="Profile"
+                                        className="w-full h-full object-cover"
+                                    />
                                 </div>
                                 <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent">
                                     Welcome Back
@@ -393,7 +399,7 @@ export default function LoginPage() {
                         <CardContent className="pt-8 pb-6 px-8">
                             <div className="text-center mb-8">
                                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center">
-                                    <svg
+                                    {/* <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
                                         viewBox="0 0 24 24"
@@ -402,7 +408,13 @@ export default function LoginPage() {
                                         className="w-8 h-8 text-white"
                                     >
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
-                                    </svg>
+                                    </svg> */}
+
+                                    <img
+                                        src="public\Something-removebg-preview.png"
+                                        alt="Profile"
+                                        className="w-full h-full object-cover"
+                                    />
                                 </div>
                                 <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent">
                                     Create Account
