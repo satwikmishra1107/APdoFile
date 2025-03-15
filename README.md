@@ -1,6 +1,8 @@
 # APDO-FILE
 
-## Distributed File Storage System Using Discord
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=25&duration=1000&pause=1000&color=F7F7F7&width=700&lines=Distributed+File+Storage+System+Using+Discord)](https://git.io/typing-svg)
+---
+Original Data of [APdoFile](https://github.com/satwikmishra1107/APdoFile/blob/main/README.md) Updated by [Pome](https://github.com/satwikmishra1107) <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Green%20Heart.png" alt="Green Heart" width="30" height="30" />
 
 APDO-FILE is an innovative file storage solution that leverages Discord as a backend storage service while maintaining file integrity and accessibility through a modern web interface.
 
