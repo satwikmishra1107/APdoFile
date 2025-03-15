@@ -18,6 +18,7 @@ interface FileCardProps {
 }
 
 const BASE_URL = `http://3.7.162.84:${PORT}`;
+// const BASE_URL = `http://localhost:${PORT}`;
 
 const FileCard = ({ file, botToken, channelId, onDelete, downloadProgress = 0 }: FileCardProps) => {
 

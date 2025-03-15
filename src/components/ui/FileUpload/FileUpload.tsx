@@ -7,9 +7,10 @@ import { useAuth } from '../../../context/userAuthContext';
 import { saveFileMetadata, fetchUserFiles, deleteFileMetadata } from "@/firebaseUtils";
 import { Alert, AlertDescription } from "../alert";
 import { createPortal } from 'react-dom';
-import { BOT_TOKEN1, CHANNEL_ID1, PORT } from "../../../config";
+import { BOT_TOKEN1, BOT_TOKEN2, BOT_TOKEN3, CHANNEL_ID1, CHANNEL_ID2, CHANNEL_ID3, PORT } from "../../../config";
 
 const BASE_URL = `http://3.7.162.84:${PORT}`;
+// const BASE_URL = `http://localhost:${PORT}`;   
 
 interface FileMetadata {
     fileName: string;
@@ -27,6 +28,7 @@ interface BotOption {
     token: string;
     description: string;  // Added description
     color: string;        // Added color for styling
+    emoji?: string;       // Added emoji
 }
 
 interface ChannelOption {
@@ -78,31 +80,34 @@ export default function FileUploadPage() {
     const BOT_OPTIONS: BotOption[] = [
         {
             value: "bot1",
-            label: "Discord Helper",
+            label: "ByteBot",
             token: `${BOT_TOKEN1}`,
-            description: "Main server assistant",
-            color: "from-blue-500 to-indigo-600"
+            description: "Techy, simple, and catchy",
+            color: "from-blue-500 to-indigo-600",
+            emoji: "🚀"
         },
         {
             value: "bot2",
-            label: "File Courier",
-            token: `${BOT_TOKEN1}`,
-            description: "Specialized for file transfers",
-            color: "from-green-500 to-emerald-600"
+            label: "Vaulty",
+            token: `${BOT_TOKEN2}`,
+            description: "Secure and storage-related",
+            color: "from-green-500 to-emerald-600",
+            emoji: "🔒"
         },
         {
             value: "bot3",
-            label: "Echo Bot",
-            token: `${BOT_TOKEN1}`,
-            description: "For testing purposes",
-            color: "from-orange-500 to-amber-600"
+            label: "NebulaDrop",
+            token: `${BOT_TOKEN3}`,
+            description: "Futuristic and cool-sounding",
+            color: "from-orange-500 to-amber-600",
+            emoji: "🌌"
         }
     ];
 
     const CHANNEL_OPTIONS: ChannelOption[] = [
         { value: "channel1", label: "# general", id: `${CHANNEL_ID1}`, members: 128, activity: "high" },
-        { value: "channel2", label: "# resources", id: `${CHANNEL_ID1}`, members: 95, activity: "medium" },
-        { value: "channel3", label: "# archive", id: `${CHANNEL_ID1}`, members: 42, activity: "low" }
+        { value: "channel2", label: "# resources", id: `${CHANNEL_ID2}`, members: 95, activity: "medium" },
+        { value: "channel3", label: "# archive", id: `${CHANNEL_ID3}`, members: 42, activity: "low" }
     ];
 
     const [errors, setErrors] = useState<{
@@ -245,7 +250,7 @@ export default function FileUploadPage() {
                     botToken: botToken,
                     channelId: channelId
                 };
-                
+
                 // console.log(user?.uid);
 
                 if (!user?.uid) {
@@ -505,7 +510,10 @@ export default function FileUploadPage() {
                                             >
                                                 <div className="flex items-center">
                                                     <div className={`h-8 w-8 rounded-md bg-gradient-to-r ${bot.color} flex items-center justify-center shadow-md mr-3`}>
-                                                        <Bot size={16} className="text-white" />
+                                                        {/* <Bot size={16} className="text-white" /> */}
+                                                        <span role="img" aria-label="bot-emoji">
+                                                            {bot.emoji}
+                                                        </span>
                                                     </div>
                                                     <div className="flex-1">
                                                         <p className="font-medium text-gray-800 dark:text-white">{bot.label}</p>
