@@ -41,7 +41,7 @@ interface ChannelOption {
 
 export default function FileUploadPage() {
 
-    console.log("The port is", PORT);
+    // console.log("The port is", PORT);
     
     const drawerRef = useRef<HTMLDivElement>(null);
     const [portalContainer, setPortalContainer] = useState<HTMLElement | null>(null);
@@ -234,8 +234,8 @@ export default function FileUploadPage() {
             formData.append('botToken', botToken);
             formData.append('channelId', channelId);
 
-            console.log("The port is", PORT);
-            console.log("The bot token is", BOT_TOKEN1);
+            // console.log("The port is", PORT);
+            // console.log("The bot token is", BOT_TOKEN1);
             
             const response = await fetch(`${BASE_URL}/api/upload`, {
                 method: 'POST',
