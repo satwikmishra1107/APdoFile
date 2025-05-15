@@ -57,7 +57,7 @@ app.get("/api/retrieve/:fileHash", async (req, res) => {
     const { fileHash } = req.params;
     const { fileSize, fileName, botToken, channelId } = req.query;
 
-    console.log("Channel ID is ", channelId);
+    // console.log("Channel ID is ", channelId);
     const file = await mainretrieve(channelId, fileHash, botToken, fileSize);
 
     // console.log(fileName);
