@@ -348,7 +348,7 @@ export default function FileUploadPage() {
 
         try {
             // First remove from Firebase
-            console.log(user.uid)
+            // console.log(user.uid)
             await deleteFileMetadata(user.uid, fileHash);
 
             // Then update local state
