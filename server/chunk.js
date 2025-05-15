@@ -57,7 +57,7 @@ export async function mainsend(channelId, BOT_TOKEN, file) {
   const chunkSize = 1024 * 1024 * 10; //Denotes 10MB pieces
   const client = new Client({ intents });
 
-  console.log("Channel ID is ", channelId);
+  // console.log("Channel ID is ", channelId);
   
   return new Promise((resolve, reject) => {
     client.once("ready", async () => {
