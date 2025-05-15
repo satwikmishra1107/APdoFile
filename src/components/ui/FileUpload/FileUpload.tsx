@@ -12,8 +12,6 @@ import { BOT_TOKEN1, BOT_TOKEN2, BOT_TOKEN3, CHANNEL_ID1, CHANNEL_ID2, CHANNEL_I
 const BASE_URL = `http://3.7.162.84:${PORT}`;
 // const BASE_URL = `http://localhost:${PORT}`;   
 
-console.log(PORT);
-
 interface FileMetadata {
     fileName: string;
     fileSize: number;
@@ -43,6 +41,8 @@ interface ChannelOption {
 
 export default function FileUploadPage() {
 
+    console.log(PORT);
+    
     const drawerRef = useRef<HTMLDivElement>(null);
     const [portalContainer, setPortalContainer] = useState<HTMLElement | null>(null);
 
