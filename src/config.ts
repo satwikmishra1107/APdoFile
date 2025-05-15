@@ -6,4 +6,4 @@ export const CHANNEL_ID1 = import.meta.env.VITE_ChannelID1;
 export const CHANNEL_ID2 = import.meta.env.VITE_ChannelID2;
 export const CHANNEL_ID3 = import.meta.env.VITE_ChannelID3;
 
-export const PORT = import.meta.env.VITE_PORT || 5000;
+export const PORT = import.meta.env.VITE_PORT || 1234;
