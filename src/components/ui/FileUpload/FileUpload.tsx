@@ -234,6 +234,8 @@ export default function FileUploadPage() {
             formData.append('botToken', botToken);
             formData.append('channelId', channelId);
 
+                console.log("The port is", PORT);
+            
             const response = await fetch(`${BASE_URL}/api/upload`, {
                 method: 'POST',
                 body: formData,
