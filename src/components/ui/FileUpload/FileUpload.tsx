@@ -41,7 +41,7 @@ interface ChannelOption {
 
 export default function FileUploadPage() {
 
-    console.log(PORT);
+    console.log("The port is", PORT);
     
     const drawerRef = useRef<HTMLDivElement>(null);
     const [portalContainer, setPortalContainer] = useState<HTMLElement | null>(null);
